@@ -2,11 +2,9 @@
 
 
 extern HDC dc;
-#include <stdint.h>
 
 
 static inline void ribbon_init(rect_data* rdata) {
-    
     rdata->color = RGB(255, 255, 255);
     rdata->size = 90;
     int screenWidth = GetSystemMetrics(SM_CXSCREEN);
@@ -15,7 +13,7 @@ static inline void ribbon_init(rect_data* rdata) {
     rdata->brush = CreateSolidBrush(rdata->color);
 }
 
-static inline void start_button_data(rect_data* sbdata) {
+static inline void start_button_init(rect_data* sbdata) {
     sbdata->color = RGB(0, 90, 0);
     sbdata->size = 90;
     sbdata->rect = (RECT){0, 0, sbdata->size, sbdata->size};
@@ -50,7 +48,7 @@ static inline void draw_ribbon(rect_data* rdata){
 
 void taskbar_init(taskbar_data* tdata){
     ribbon_init(&tdata->rdata);
-    start_button_data(&tdata->sbdata);
+    start_button_init(&tdata->sbdata);
 }
 
 
