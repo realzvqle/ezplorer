@@ -5,13 +5,12 @@
 extern HDC dc;
 
 void taskbar_init(taskbar_data* tdata){
+    
     int screenWidth = GetSystemMetrics(SM_CXSCREEN);
     int screenHeight = GetSystemMetrics(SM_CYSCREEN);
-    
     int dpiX = GetDeviceCaps(dc, LOGPIXELSX);  
     int dpiY = GetDeviceCaps(dc, LOGPIXELSY);
-   
-    tdata->rect = (RECT){screenWidth * dpiX, (screenHeight * dpiX), 0, tdata->size};
+    tdata->rect = (RECT){screenWidth * dpiX, tdata->size, 0, 0};
     tdata->brush = CreateSolidBrush(tdata->color);
 
 }
