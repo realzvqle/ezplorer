@@ -3,12 +3,11 @@
 
 
 #include "ezplorer.h"
-#include <stdint.h>
 
 
 
 typedef struct _rect_data {
-    int size;
+    uint8_t size;
     COLORREF color;
     RECT rect;
     HBRUSH brush;
@@ -17,7 +16,6 @@ typedef struct _rect_data {
 typedef struct _taskbar_data {
     rect_data rdata;
     rect_data sbdata;
-
 } taskbar_data;
 
 void taskbar_init(taskbar_data* tdata);

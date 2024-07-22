@@ -2,10 +2,11 @@
 
 
 extern HDC dc;
-
+#include <stdint.h>
 
 
 static inline void ribbon_init(rect_data* rdata) {
+    
     rdata->color = RGB(255, 255, 255);
     rdata->size = 90;
     int screenWidth = GetSystemMetrics(SM_CXSCREEN);

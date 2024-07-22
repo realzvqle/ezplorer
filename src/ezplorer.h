@@ -2,6 +2,7 @@
 #define EZPLORER_H_INCLUDED
 
 #include <windows.h>
+#include <stdint.h>
 
 
 
